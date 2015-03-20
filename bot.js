@@ -5,15 +5,80 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/
+      botRegex = /^\/cool guy/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegexAd=/^\/advance/; botRegexSC = /^\/SDL/i;
+      botRegexP = /^\/search/i;  botRegexTw = /^\/twitch/i; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
+    this.res.end();
+  }
+  else if(request.text && botRegexSORRY.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://i251.photobucket.com/albums/gg294/wafpaf/graphics/sorry/sorry6.jpg");
+    this.res.end();
+  }
+  else if(request.text && botRegexOK.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://i.imgur.com/42G7fd8.jpg");
+    this.res.end();
+  }
+  else if(request.text && botRegexLOL.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://cdn.alltheragefaces.com/img/faces/png/laughing-lol-crazy.png");
+    this.res.end();
+  }
+  else if(request.text && botRegexARCHER.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://docs.google.com/document/d/1rArdgW-u3jx2ZPR_a69HZ_qwjP0-6GDpE8emx6ds-NQ/edit?usp=sharing");
+    this.res.end();
+  }
+  else if(request.text && botRegexPLAYER.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.daddyleagues.com/MML/stats/player");
+    this.res.end();
+  }
+  else if(request.text && botRegexSTATS.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.daddyleagues.com/MML/stats/team");
+    this.res.end();
+  }
+  else if(request.text && botRegexGAMES.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.daddyleagues.com/MML/schedules");
+    this.res.end();
+  }
+  else if(request.text && botRegexSTANDINGS.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.daddyleagues.com/MML/standings/league");
+    this.res.end();
+  }
+  else if(request.text && botRegexPOWER.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.daddyleagues.com/MML/standing/ranking");
+    this.res.end();
+  } 
+  else if(request.text && botRegexSTATEMENT.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.virtualsportsnetwork.com/forum/showthread.php?137005-Inaugural-Year-1-Statement-from-Da-Commisioners-Office!");
+    this.res.end();
+  } 
+  else if(request.text && botRegexTRADES.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.virtualsportsnetwork.com/forum/forumdisplay.php?1693-Completed-Trades");
+    this.res.end();
+  } 
+  else if(request.text && botRegexOWNERS.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.virtualsportsnetwork.com/forum/showthread.php?138559-The-MCL-(Master-Contact-List)&p=2453502#post2453502");
+    this.res.end();
+  } 
+  else if(request.text && botRegexDADDY.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://daddyleagues.com/mml");
     this.res.end();
   } 
   else if(request.text && botRegexDL.test(request.text)) {
@@ -36,11 +101,6 @@ function respond() {
     postMessage("http://www.quickmeme.com/img/9f/9f3720469d1ce6c2d20130ed0750935a394df80ffcddec6d16e091d95efea854.jpg");
     this.res.end();
   } 
-  else if(request.text && botRegexGTA.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
-    this.res.end();
-  } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/SNKLFRTZ/team/"+request.text.substring(5,8)+"/schedule");
@@ -57,11 +117,6 @@ function respond() {
   else if(request.text && botRegexTw.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
-    this.res.end();
-  } 
-  else if(request.text && botRegexSb.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("N/A");
     this.res.end();
   } 
   else {
