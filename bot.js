@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegex = /^\/cool guy/; botRegexKISHK = /^\/kishk/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/; botRegexSC = /^\/SDL/i;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -16,9 +16,19 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
+  else if(request.text && botRegexKISHK.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://media.giphy.com/media/PvIujxkZ9OXlu/giphy.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexSOS.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.daddyleagues.com/MML/schedules/strength");
+    this.res.end();
+  }
   else if(request.text && botRegexFUCK.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://media.giphy.com/media/NPrgXVKkicqT6/giphy.gif");
+    postMessage("http://media.giphy.com/media/sRmCHLizC6dkA/giphy.gif");
     this.res.end();
   }
   else if(request.text && botRegexSHOTS.test(request.text)) {
@@ -48,7 +58,7 @@ function respond() {
   }
   else if(request.text && botRegexLOL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://cdn.alltheragefaces.com/img/faces/png/laughing-lol-crazy.png");
+    postMessage("http://media.giphy.com/media/oIR6xeOffCEBa/giphy.gif");
     this.res.end();
   }
   else if(request.text && botRegexARCHER.test(request.text)) {
