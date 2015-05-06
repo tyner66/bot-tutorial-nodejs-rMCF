@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexKISHK = /^\/kishk/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegex = /^\/cool guy/; botRegexNO = /^\/no/; botRegexKISHK = /^\/kishk/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/; botRegexSC = /^\/SDL/i;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -16,9 +16,14 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
+  else if(request.text && botRegexNO.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://media.giphy.com/media/9hQH6Ge447Xt6/giphy.gif");
+    this.res.end();
+  }
   else if(request.text && botRegexKISHK.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://media.giphy.com/media/PvIujxkZ9OXlu/giphy.gif");
+    postMessage("http://giphy.com/gifs/maddengiferator-cardinals-arizona-larry-fitzgerald-5wWf7H6s5NgBvofUA00");
     this.res.end();
   }
   else if(request.text && botRegexSOS.test(request.text)) {
