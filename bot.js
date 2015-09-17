@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexKNIGHT = /^\/knight/; botRegexNW = /^\/nw/; botRegexNO = /^\/no/; botRegexKISHK = /^\/kishk/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegex = /^\/cool guy/; botRegexNW = /^\/nw/; botRegexNO = /^\/no/; botRegexKISHK = /^\/kishk/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/; botRegexSC = /^\/SDL/i;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -14,11 +14,6 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
-    this.res.end();
-  }
-  else if(request.text && botRegexKNIGHT.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/gamerecap/1207901");
     this.res.end();
   }
   else if(request.text && botRegexNW.test(request.text)) {
@@ -38,7 +33,7 @@ function respond() {
   }
   else if(request.text && botRegexSOS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/schedules/strength");
+    postMessage("http://www.daddyleagues.com/MML16/schedules/strength");
     this.res.end();
   }
   else if(request.text && botRegexFUCK.test(request.text)) {
@@ -83,27 +78,27 @@ function respond() {
   }
   else if(request.text && botRegexPLAYER.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/stats/player");
+    postMessage("http://www.daddyleagues.com/MML16/stats/player");
     this.res.end();
   }
   else if(request.text && botRegexSTATS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/stats/team");
+    postMessage("http://www.daddyleagues.com/MML16/stats/team");
     this.res.end();
   }
   else if(request.text && botRegexGAMES.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/schedules");
+    postMessage("http://www.daddyleagues.com/MML16/schedules");
     this.res.end();
   }
   else if(request.text && botRegexSTANDINGS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/standings/league");
+    postMessage("http://www.daddyleagues.com/MML16/standings/league");
     this.res.end();
   }
   else if(request.text && botRegexPOWER.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/standing/ranking");
+    postMessage("http://www.daddyleagues.com/MML16/standing/ranking");
     this.res.end();
   } 
   else if(request.text && botRegexSTATEMENT.test(request.text)) {
@@ -123,12 +118,12 @@ function respond() {
   } 
   else if(request.text && botRegexDADDY.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/mml");
+    postMessage("http://daddyleagues.com/mml16");
     this.res.end();
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/mml/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/mml16/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
