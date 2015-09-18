@@ -48,7 +48,7 @@ function respond() {
   }
   else if(request.text && botRegexSOS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/schedules/strength");
+    postMessage("http://www.daddyleagues.com/MML16/schedules/strength");
     this.res.end();
   }
   else if(request.text && botRegexFUCK.test(request.text)) {
@@ -93,27 +93,27 @@ function respond() {
   }
   else if(request.text && botRegexPLAYER.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/stats/player");
+    postMessage("http://www.daddyleagues.com/MML16/stats/player");
     this.res.end();
   }
   else if(request.text && botRegexSTATS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/stats/team");
+    postMessage("http://www.daddyleagues.com/MML16/stats/team");
     this.res.end();
   }
   else if(request.text && botRegexGAMES.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/schedules");
+    postMessage("http://www.daddyleagues.com/MML16/schedules");
     this.res.end();
   }
   else if(request.text && botRegexSTANDINGS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/standings/league");
+    postMessage("http://www.daddyleagues.com/MML16/standings/league");
     this.res.end();
   }
   else if(request.text && botRegexPOWER.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML/standing/ranking");
+    postMessage("http://www.daddyleagues.com/MML16/standing/ranking");
     this.res.end();
   } 
   else if(request.text && botRegexSTATEMENT.test(request.text)) {
@@ -133,12 +133,12 @@ function respond() {
   } 
   else if(request.text && botRegexDADDY.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/mml");
+    postMessage("http://daddyleagues.com/mml16");
     this.res.end();
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/mml/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/mml16/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
@@ -158,14 +158,14 @@ function respond() {
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/mml/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/mml16/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/mml/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/mml16/players?name="+rep+"&position=all&team=all");
     this.res.end();
   } 
 
