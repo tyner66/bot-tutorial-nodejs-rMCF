@@ -16,7 +16,7 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
-  else if(request.text && botRegexARCH.test(request.text)) {
+  else if(request.text && botRegexHEH.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://38.media.tumblr.com/7b340c5468430b54444efbc8d87176e8/tumblr_mokhwrDKzw1sq9nm5o1_500.gif");
     this.res.end();
