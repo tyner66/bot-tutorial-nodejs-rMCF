@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexARCH = /^\/my ass/; botRegexEYES = /^\/eyes/; botRegexKNIGHT = /^\/yeah/; botRegexNW = /^\/nw/; botRegexNO = /^\/no/; botRegexKISHK = /^\/kishk/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegex = /^\/cool guy/; botRegexHEH = /^\/knight/; botRegexARCH = /^\/my ass/; botRegexEYES = /^\/eyes/; botRegexKNIGHT = /^\/yeah/; botRegexNW = /^\/nw/; botRegexNO = /^\/no/; botRegexKISHK = /^\/kishk/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/; botRegexSC = /^\/SDL/i;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -14,6 +14,11 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
+    this.res.end();
+  }
+  else if(request.text && botRegexARCH.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://38.media.tumblr.com/7b340c5468430b54444efbc8d87176e8/tumblr_mokhwrDKzw1sq9nm5o1_500.gif");
     this.res.end();
   }
   else if(request.text && botRegexARCH.test(request.text)) {
