@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexHEH = /^\/knight/; botRegexARCH = /^\/my ass/; botRegexEYES = /^\/eyes/; botRegexKNIGHT = /^\/yeah/; botRegexNW = /^\/nw/; botRegexNO = /^\/no/; botRegexKISHK = /^\/kishk/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexSTATEMENT = /^\/statement/; botRegexTRADES =/^\/trades/;  botRegexOWNERS = /^\/owner/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegex = /^\/cool guy/; botRegexARCH = /^\/my ass/; botRegexEYES = /^\/eyes/; botRegexKNIGHT = /^\/yeah/; botRegexNW = /^\/nw/; botRegexNO = /^\/no/; botRegexSOS = /^\/sos/; botRegexFUCK = /^\/idgaf/; botRegexSHOTS = /^\/shots fired/; botRegexDAMN = /^\/damn/; botRegexMIND = /^\/mind blown/; botRegexSORRY = /^\/sorry/; botRegexOK = /^\/ok/; botRegexLOL = /^\/lol/; botRegexARCHER = /^\/archer/; botRegexPLAYER = /^\/player stats/; botRegexSTATS = /^\/team stats/; botRegexGAMES = /^\/games/; botRegexSTANDINGS = /^\/standings/; botRegexPOWER = /^\/power/; botRegexDADDY = /^\/dl/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/; botRegexSC = /^\/SDL/i;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -14,11 +14,6 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
-    this.res.end();
-  }
-  else if(request.text && botRegexHEH.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://38.media.tumblr.com/7b340c5468430b54444efbc8d87176e8/tumblr_mokhwrDKzw1sq9nm5o1_500.gif");
     this.res.end();
   }
   else if(request.text && botRegexARCH.test(request.text)) {
@@ -46,14 +41,9 @@ function respond() {
     postMessage("http://media.giphy.com/media/9hQH6Ge447Xt6/giphy.gif");
     this.res.end();
   }
-  else if(request.text && botRegexKISHK.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://media.giphy.com/media/e4qfyCfJqoRxK/giphy.gif");
-    this.res.end();
-  }
   else if(request.text && botRegexSOS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML16/schedules/strength");
+    postMessage("http://www.daddyleagues.com/wl/schedules/strength");
     this.res.end();
   }
   else if(request.text && botRegexFUCK.test(request.text)) {
@@ -98,52 +88,37 @@ function respond() {
   }
   else if(request.text && botRegexPLAYER.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML16/stats/player");
+    postMessage("http://www.daddyleagues.com/wl/stats/player");
     this.res.end();
   }
   else if(request.text && botRegexSTATS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML16/stats/team");
+    postMessage("http://www.daddyleagues.com/wl/stats/team");
     this.res.end();
   }
   else if(request.text && botRegexGAMES.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML16/schedules");
+    postMessage("http://www.daddyleagues.com/wl/schedules");
     this.res.end();
   }
   else if(request.text && botRegexSTANDINGS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML16/standings/league");
+    postMessage("http://www.daddyleagues.com/wl/standings/league");
     this.res.end();
   }
   else if(request.text && botRegexPOWER.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/MML16/standing/ranking");
-    this.res.end();
-  } 
-  else if(request.text && botRegexSTATEMENT.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.virtualsportsnetwork.com/forum/showthread.php?137005-Inaugural-Year-1-Statement-from-Da-Commisioners-Office!");
-    this.res.end();
-  } 
-  else if(request.text && botRegexTRADES.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.virtualsportsnetwork.com/forum/forumdisplay.php?1693-Completed-Trades");
-    this.res.end();
-  } 
-  else if(request.text && botRegexOWNERS.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.virtualsportsnetwork.com/forum/showthread.php?138559-The-MCL-(Master-Contact-List)&p=2453502#post2453502");
+    postMessage("http://www.daddyleagues.com/wl/standing/ranking");
     this.res.end();
   } 
   else if(request.text && botRegexDADDY.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/mml16");
+    postMessage("http://daddyleagues.com/wl");
     this.res.end();
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/mml16/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/wl/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
@@ -163,14 +138,14 @@ function respond() {
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/mml16/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/wl/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/mml16/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/wl/players?name="+rep+"&position=all&team=all");
     this.res.end();
   } 
 
